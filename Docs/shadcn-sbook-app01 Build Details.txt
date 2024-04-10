@@ -1,0 +1,65 @@
+shadcn-app01 Build Details.txt
+
+This document describs the steps thst 
+Rich Howland performed to create the 
+Next.js app named "shadcn-sbook-app01".
+
+------------------------------------------
+01 Create a Next.js 14 starter app.
+
+   In VSCode terminal, 
+   with Node version 20.12.1 installed
+   Entered: 
+     npx-create-next-app@latest
+
+       Questions: 
+         App Name            shadcn-sbook-app01
+         Typescript          Y
+         ESLint              Y
+         Tailwind CSS        Y
+         src dir             Y
+         App Router          Y
+         Customize default
+           import alias      N
+
+
+   The project was created with no errors.
+
+   Source: 
+     https://nextjs.org/docs/app/api-reference/create-next-app
+
+
+------------------------------------------
+02 Close VSCode and restart in the new 
+   app folder
+
+
+------------------------------------------
+03 Install Storybook
+
+   Entered: 
+     npx storybook@latest init
+
+ 
+   Storybook was installed with no errors and 
+   the Storybook UI appeared automatically.
+
+
+   Source:  
+     https://storybook.js.org/docs/get-started
+
+
+------------------------------------------
+04 Create Docs folder
+
+   In the app root folder, 
+   Created this folder: 
+     Docs
+
+   Saved this text file in the Docs 
+   folder.
+
+
+------------------------------------------
+
+(End of document)
