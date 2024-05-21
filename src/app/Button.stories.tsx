@@ -45,6 +45,18 @@ export const _Outline: Story = {
   render:() => <ButtonDemo choice="outline"/>
 };
 
-export const _WithIcon: Story = {
-  render:() => <ButtonDemo/>
+export const _Icon: Story = {
+  render:() => <ButtonDemo select="icon"/>
+};
+
+export const _Small: Story = {
+  render:() => <ButtonDemo select="sm"/>
+};
+
+export const _Medium: Story = {
+  render:() => <ButtonDemo select="default"/>
+};
+
+export const _Large: Story = {
+  render:() => <ButtonDemo select="lg"/>
 };
