@@ -6,10 +6,14 @@ const meta: Meta<typeof ButtonDemo> = {
   title: 'App/Page/Button',
   component: ButtonDemo,
   argTypes: {
-    variant: {
-      options: ['secondary','destructive','ghost','outline','sm','lg','default','icon'],
+    choice: {
+      options: ['default','secondary','destructive','ghost','outline','link'],
       control: { type: 'radio' },
     },
+    select:{
+      options: ['lg','default','sm','icon'],
+      control: {type: 'radio'},
+    }
   },
 
 parameters: {
@@ -26,8 +30,9 @@ export const _Primary: Story = {};
 export const _Secondary: Story = {
 args:{
 choice:'destructive',
+select:'default',
 },
-render:({choice}) => <ButtonDemo choice= {choice}/>,
+render:({choice , select}) => <ButtonDemo choice= {choice} select= {select}/>,
 };
 
 export const _Destructive: Story = {
