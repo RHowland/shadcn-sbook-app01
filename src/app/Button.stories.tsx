@@ -7,7 +7,7 @@ const meta: Meta<typeof ButtonDemo> = {
   component: ButtonDemo,
   argTypes: {
     variant: {
-      options: ['secondary','destructive'],
+      options: ['secondary','destructive','ghost','outline','sm','lg','default','icon'],
       control: { type: 'radio' },
     },
   },
@@ -18,15 +18,16 @@ parameters: {
   },
 };
 
-
-
 export default meta;
 type Story = StoryObj<typeof ButtonDemo>;
 
 export const _Primary: Story = {};
 
 export const _Secondary: Story = {
-render:() => <ButtonDemo choice= "secondary"/>
+args:{
+choice:'destructive',
+},
+render:({choice}) => <ButtonDemo choice= {choice}/>,
 };
 
 export const _Destructive: Story = {
