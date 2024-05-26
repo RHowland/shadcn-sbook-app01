@@ -6,7 +6,13 @@ import { Label } from "@/components/ui/label";
 const meta: Meta<typeof Checkbox> = {
     title: 'App/Page/Checkbox',
     component: Checkbox,
-    argTypes: {},
+    argTypes: {
+      className: {
+        options:['flex items-center space-x-1','flex items-center space-x-2','flex items-center space-x-4','flex items-center space-x-5'],
+        control:{type:'radio'},
+      },
+      
+    },
   
   parameters: {
       // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -14,15 +20,17 @@ const meta: Meta<typeof Checkbox> = {
     },
   };
   
-  
-  
   export default meta;
   type Story = StoryObj<typeof Checkbox>;
   
   export const _Default: Story = {
-      render:() => (
+    args:{
+      className:"flex items-center space-x-2",
+      
+    },
+      render:({className}) => (
 <div>
-      <div className="flex items-center space-x-2">
+      <div className={className}>
         <Checkbox id="terms" />
         <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>

@@ -25,44 +25,82 @@ parameters: {
 export default meta;
 type Story = StoryObj<typeof ButtonDemo>;
 
-export const _Primary: Story = {};
+export const _Primary: Story = {
+  args:{
+    displayedName:'Default',
+    choice:'default',
+    select:'default',
+  }
+};
 
 export const _Secondary: Story = {
 args:{
-choice:'destructive',
+displayedName:'Secondary',  
+choice:'secondary',
 select:'default',
 },
-render:({choice , select}) => <ButtonDemo choice= {choice} select= {select}/>,
 };
 
 export const _Destructive: Story = {
-  render:() => <ButtonDemo choice="destructive"/>
+  args:{
+    displayedName:'Destructive',
+    choice:'destructive',
+    select:'default',
+  }
 };
 
 export const _Ghost: Story = {
-  render:() => <ButtonDemo choice="ghost"/>
+  args:{
+    displayedName:'Ghost',
+    choice:'ghost',
+    select:'default',
+  }
 };
 
 export const _Link: Story = {
-  render:() => <ButtonDemo choice="link"/>
+  args:{
+    displayedName:'Link',
+    choice:'link',
+    select:'default',
+  }
 };
 
 export const _Outline: Story = {
-  render:() => <ButtonDemo choice="outline"/>
+  args:{
+    displayedName:'Outline',
+    choice:'outline',
+    select:'default',
+  }
 };
 
 export const _Icon: Story = {
-  render:() => <ButtonDemo select="icon"/>
+  args:{
+    displayedName:'Icon',
+    choice:'destructive',
+    select:'icon',
+  }
 };
 
 export const _Small: Story = {
-  render:() => <ButtonDemo select="sm"/>
+  args:{
+    displayedName:'Small',
+    choice:'destructive',
+    select:'sm',
+  }
 };
 
 export const _Medium: Story = {
-  render:() => <ButtonDemo select="default"/>
+  args:{
+    displayedName:'Medium',
+    choice:'destructive',
+    select:'default',
+  }
 };
 
 export const _Large: Story = {
-  render:() => <ButtonDemo select="lg"/>
+  args:{
+    displayedName:'Large',
+    choice:'destructive',
+    select:'lg',
+  }
 };
