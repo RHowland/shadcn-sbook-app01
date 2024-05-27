@@ -6,7 +6,12 @@ import { Label } from "@/components/ui/label";
 const meta: Meta<typeof Label> = {
     title: 'App/Page/Label',
     component: Label,
-    argTypes: {},
+    argTypes: {
+      className:{
+        options:["text-xs","text","text-base","text-lg"],
+        control: {type:'radio'},
+      }
+    },
   
   parameters: {
       // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -20,33 +25,33 @@ const meta: Meta<typeof Label> = {
   type Story = StoryObj<typeof Label>;
   
   export const _Small: Story = {
-    render:() => (
+    render:({className}) => (
 <div>
     <div className="flex items-center space-x-2">
       <Checkbox id="terms" />
-      <Label htmlFor="terms" className="text-xs">Accept terms and conditions</Label>
+      <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
     </div>
   </div>
     ),
 };
   
   export const _Default: Story = {
-      render:() => (
+      render:({className}) => (
 <div>
       <div className="flex items-center space-x-2">
         <Checkbox id="terms" />
-        <Label htmlFor="terms">Accept terms and conditions</Label>
+        <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
       </div>
     </div>
       ),
   };
 
   export const _Medium: Story = {
-    render:() => (
+    render:({className}) => (
   <div>
     <div className="flex items-center space-x-2">
       <Checkbox id="terms" />
-      <Label htmlFor="terms" className="text-base">Accept terms and conditions</Label>
+      <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
     </div>
   </div>
     ),
@@ -54,11 +59,11 @@ const meta: Meta<typeof Label> = {
 
 
   export const _Large: Story = {
-    render:() => (
+    render:({className}) => (
 <div>
     <div className="flex items-center space-x-2">
       <Checkbox id="terms" />
-      <Label htmlFor="terms" className="text-lg">Accept terms and conditions</Label>
+      <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
     </div>
   </div>
     ),

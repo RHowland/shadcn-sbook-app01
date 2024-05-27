@@ -30,6 +30,7 @@ export const _Primary: Story = {
     displayedName:'Default',
     choice:'default',
     select:'default',
+    className:'font-bold',
   }
 };
 

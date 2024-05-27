@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import CheckboxDemo  from "./checkbox/page";
 
 
-const meta: Meta<typeof Checkbox> = {
+const meta: Meta<typeof CheckboxDemo> = {
     title: 'App/Page/Checkbox',
-    component: Checkbox,
+    component: CheckboxDemo,
     argTypes: {
-      className: {
-        options:['flex items-center space-x-1','flex items-center space-x-2','flex items-center space-x-4','flex items-center space-x-5'],
+      CheckboxSize: {
+        options:['h-2 w-2','h-3 w-3','h-4 w-4','h-5 w-5','h-6 w-6'],
         control:{type:'radio'},
       },
       
@@ -21,29 +20,25 @@ const meta: Meta<typeof Checkbox> = {
   };
   
   export default meta;
-  type Story = StoryObj<typeof Checkbox>;
+  type Story = StoryObj<typeof CheckboxDemo>;
   
   export const _Default: Story = {
     args:{
-      className:"flex items-center space-x-2",
-      
-    },
-      render:({className}) => (
-<div>
-      <div className={className}>
-        <Checkbox id="terms" />
-        <Label htmlFor="terms">Accept terms and conditions</Label>
-      </div>
-    </div>
-      ),
+      CheckboxSize:'h-4 w-4',
+      disableCheckbox:false,
+      labelContents:'Our first props checkbox',
+    }
   };
 
   export const _Disabled: Story = {
-    render:() => (
+    args:{
+      disabled:true,
+    },
+    render:({disabled , className}) => (
   <div>
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" disabled/>
-      <Label htmlFor="terms" className="text-base">Accept terms and conditions</Label>
+      <Checkbox id="terms" disabled={disabled} className={className}/>
+      <Label htmlFor="terms" className="text-base" >Accept terms and conditions</Label>
     </div>
   </div>
     ),
@@ -51,10 +46,13 @@ const meta: Meta<typeof Checkbox> = {
 
 
   export const _Large: Story = {
-    render:() => (
+    args:{
+    className:'h-6 w-6',
+    },
+    render:({disabled , className}) => (
 <div>
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className="h-6 w-6"/>
+      <Checkbox id="terms" className={className} disabled={disabled}/>
       <Label htmlFor="terms">Accept terms and conditions</Label>
     </div>
   </div>
@@ -62,10 +60,10 @@ const meta: Meta<typeof Checkbox> = {
 };
 
 export const _Small: Story = {
-    render:() => (
+    render:({disabled , className}) => (
 <div>
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className="h-2 w-2"/>
+      <Checkbox id="terms" className="h-2 w-2" disabled={disabled}/>
       <Label htmlFor="terms">Accept terms and conditions</Label>
     </div>
   </div>
@@ -76,7 +74,7 @@ export const _Square: Story = {
     render:() => (
 <div>
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className="rounded-none"/>
+      <Checkbox id="terms" className="rounded-none" />
       <Label htmlFor="terms">Accept terms and conditions</Label>
     </div>
   </div>
