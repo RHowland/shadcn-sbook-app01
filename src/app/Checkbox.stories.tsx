@@ -10,6 +10,10 @@ const meta: Meta<typeof CheckboxDemo> = {
         options:['h-2 w-2','h-3 w-3','h-4 w-4','h-5 w-5','h-6 w-6'],
         control:{type:'radio'},
       },
+      CheckboxStyle:{
+        options:['rounded-full','rounded-none','rounded-md','rounded-lg'],
+        control:{type:'radio'},
+      },
       
     },
   
@@ -25,6 +29,7 @@ const meta: Meta<typeof CheckboxDemo> = {
   export const _Default: Story = {
     args:{
       CheckboxSize:'h-4 w-4',
+      CheckboxStyle:'rounded-md',
       disableCheckbox:false,
       labelContents:'Our first props checkbox',
     }
@@ -32,64 +37,49 @@ const meta: Meta<typeof CheckboxDemo> = {
 
   export const _Disabled: Story = {
     args:{
-      disabled:true,
-    },
-    render:({disabled , className}) => (
-  <div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" disabled={disabled} className={className}/>
-      <Label htmlFor="terms" className="text-base" >Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+      CheckboxSize:'h-4 w-4',
+      CheckboxStyle:'rounded-md',
+      disableCheckbox:true,
+      labelContents:'Our first props checkbox',
+    }
+    
   };
 
 
   export const _Large: Story = {
     args:{
-    className:'h-6 w-6',
-    },
-    render:({disabled , className}) => (
-<div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className={className} disabled={disabled}/>
-      <Label htmlFor="terms">Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+      CheckboxSize:'h-6 w-6',
+      CheckboxStyle:'rounded-md',
+      disableCheckbox:false,
+      labelContents:'A large checkbox',
+    }
 };
 
 export const _Small: Story = {
-    render:({disabled , className}) => (
-<div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className="h-2 w-2" disabled={disabled}/>
-      <Label htmlFor="terms">Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+  args:{
+    CheckboxSize:'h-2 w-2',
+    CheckboxStyle:'rounded-md',
+    disableCheckbox:false,
+    labelContents:'A small checkbox',
+  }
 };
 
 export const _Square: Story = {
-    render:() => (
-<div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" className="rounded-none" />
-      <Label htmlFor="terms">Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+  args:{
+    CheckboxSize:'h-4 w-4',
+    CheckboxStyle:'rounded-none',
+    disableCheckbox:false,
+    labelContents:'A square checkbox',
+  }
 };
 
 export const _Rounded: Story = {
-  render:() => (
-<div>
-  <div className="flex items-center space-x-2">
-    <Checkbox id="terms" className="rounded-full"/>
-    <Label htmlFor="terms">Accept terms and conditions</Label>
-  </div>
-</div>
-  ),
+  args:{
+    CheckboxSize:'h-4 w-4',
+    CheckboxStyle:'rounded-full',
+    disableCheckbox:false,
+    labelContents:'A round checkbox',
+  }
 };
 
 export const _WithText: Story = {
