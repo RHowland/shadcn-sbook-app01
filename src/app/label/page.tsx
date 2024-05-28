@@ -7,13 +7,13 @@ export default function LabelDemo(props) {
 const labelContents = props.labelContents;
 const textSize = props.textSize;
 const fontStyle = props.fontStyle;
-const lineHeight = props.lineHight;
+const htmlFor = props.htmlFor;
 
   return (
     <div>
       <div className='flex items-center space-x-2'>
         <Checkbox id="terms" />
-        <Label htmlFor="terms" className={textSize+' '+fontStyle+' '+lineHeight}>{labelContents}</Label>
+        <Label htmlFor={htmlFor} className={textSize+' '+fontStyle}>{labelContents}</Label>
       </div>
     </div>
   )

@@ -16,8 +16,8 @@ const meta: Meta<typeof LabelDemo> = {
         options:['italic','non-italic'],
         control: {type:'radio'},
       },
-      lineHeight:{
-        options:['leading-none','leading-tight','leading-snug','leading-normal','leading-relaxed','leading-loose'],
+      htmlFor:{
+        options:['terms','email','picture'],
         control: {type:'radio'},
       },
       
@@ -38,7 +38,7 @@ const meta: Meta<typeof LabelDemo> = {
  args:{
   textSize:'text-xs',
   fontStyle:'non-italic',
-  lineHeight:'leading-none',
+  htmlFor:'terms',
   labelContents:'our first props label',
  }
 };

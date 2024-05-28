@@ -1,12 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {Input} from "@/components/ui/input";
-import {Label} from "@/components/ui/label";
-import {Button} from "@/components/ui/button";
+import InputDemo from "./input/page";
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof InputDemo> = {
   title: 'App/Page/Input',
-  component: Input,
-  argTypes: {},
+  component: InputDemo,
+  argTypes: {
+    type:{
+        options:['email','file'],
+        control:{type:'radio'},
+    },
+    height:{
+        options:['h-5','h-6','h-7','h-8','h-9','h-10'],
+        control:{type:'radio'},
+    },
+    width:{
+        options:['w-1/4','w-2/4','w-3/4','w-full'],
+        control:{type:'radio'},
+    }
+   },
 
 parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -17,10 +28,15 @@ parameters: {
 
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof InputDemo>;
 
 export const _Default: Story = {
-    render:() => <Input type="email" placeholder="Email"/>
+    args:{
+        type:'email',
+        height:'h-5',
+        width:'w-full',
+        disabled:false,
+    }
 };
 
 export const _File: Story = {
@@ -33,9 +49,12 @@ export const _File: Story = {
 };
 
 export const _Disabled: Story = {
-    render:() => (
-        <Input disabled type="email" placeholder="Email"/>
-    )
+    args:{
+        type:'email',
+        height:'h-10',
+        width:'w-full',
+        disabled:true,
+    }
 };
 
 export const _WithLabel: Story = {
