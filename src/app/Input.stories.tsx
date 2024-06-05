@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import InputDemo from "./input/page";
+import { Label } from  "@/components/ui/label";
+import { Button } from  "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const meta: Meta<typeof InputDemo> = {
   title: 'App/Page/Input',
