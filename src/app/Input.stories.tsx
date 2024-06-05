@@ -40,12 +40,12 @@ export const _Default: Story = {
 };
 
 export const _File: Story = {
-    render:() => (
-        <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="picture">Picture</Label>
-        <Input id="picture" type="file" />
-        </div>
-    )
+    args:{
+        type:'file',
+        height:'h-10',
+        width:'w-full',
+        disabled:false,
+    }
 };
 
 export const _Disabled: Story = {
