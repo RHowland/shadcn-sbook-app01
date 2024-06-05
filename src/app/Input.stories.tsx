@@ -61,19 +61,26 @@ export const _Disabled: Story = {
 };
 
 export const _WithLabel: Story = {
-    render:() => (
+    args:{label:'Email'},
+    render:({label}) => (
         <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">{label}</Label>
         <Input id="email" type="email" placeholder="Email" />
         </div>
     )
 };
 
 export const _WithButton: Story = {
-    render:() => (
+    argTypes:{
+        variant:{
+        options:['destructive','ghost','outline','secondary','default'],
+        control:{type:'radio'},
+    },
+    },
+    render:({variant}) => (
         <div className="flex w-full max-w-sm items-center space-x-2">
         <Input type="email" placeholder="Email" />
-        <Button type="submit">Subscribe</Button>
+        <Button variant={variant}>Subscribe</Button>
         </div>
     )
 };
