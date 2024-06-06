@@ -62,10 +62,10 @@ export const _Disabled: Story = {
 
 export const _WithLabel: Story = {
     args:{label:'Email'},
-    render:({label}) => (
+    render:({label,height,width,type}) => (
         <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="email">{label}</Label>
-        <Input id="email" type="email" placeholder="Email" />
+        <Input id="email" type={type} placeholder="Email" className={height+' '+width}/>
         </div>
     )
 };
@@ -77,9 +77,9 @@ export const _WithButton: Story = {
         control:{type:'radio'},
     },
     },
-    render:({variant}) => (
+    render:({variant,type,height,width}) => (
         <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input type="email" placeholder="Email" />
+        <Input type={type} placeholder="Email" className={height+' '+width} />
         <Button variant={variant}>Subscribe</Button>
         </div>
     )
