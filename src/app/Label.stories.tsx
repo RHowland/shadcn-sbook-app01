@@ -44,36 +44,34 @@ const meta: Meta<typeof LabelDemo> = {
 };
   
   export const _Default: Story = {
-      render:({className}) => (
-<div>
-      <div className="flex items-center space-x-2">
-        <Checkbox id="terms" />
-        <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
-      </div>
-    </div>
-      ),
+
+    args:{
+      textSize:'text',
+      fontStyle:'italic',
+      htmlFor:'terms',
+      labelContents:'our first props label',
+     }
+      
   };
 
   export const _Medium: Story = {
-    render:({className}) => (
-  <div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
-      <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+    args:{
+      textSize:'text-base',
+      fontStyle:'italic',
+      htmlFor:'terms',
+      labelContents:'our first props label',
+     }
+      
   };
 
 
   export const _Large: Story = {
-    render:({className}) => (
-<div>
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
-      <Label htmlFor="terms" className={className}>Accept terms and conditions</Label>
-    </div>
-  </div>
-    ),
+    args:{
+      textSize:'text-lg',
+      fontStyle:'italic',
+      htmlFor:'terms',
+      labelContents:'our first props label',
+     }
+      
 };
 
