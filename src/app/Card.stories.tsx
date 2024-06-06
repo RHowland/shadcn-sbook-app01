@@ -6,7 +6,11 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import type { Meta, StoryObj } from '@storybook/react';  
+import type { Meta, StoryObj } from '@storybook/react';
+import ButtonDemo from "./button/page";
+import InputDemo from "./input/page";  
+import CheckboxDemo  from "./checkbox/page";
+import  LabelDemo  from "./label/page";
 
 const meta: Meta<typeof Card> = {
     title: 'App/Page/Card',
@@ -38,4 +42,59 @@ const meta: Meta<typeof Card> = {
 </Card>
 
     )
+};
+
+export const _withButton: Story = {
+  render:() => (
+      <Card>
+<CardHeader>
+  <CardTitle>Card Title</CardTitle>
+  <CardDescription>Card Description</CardDescription>
+</CardHeader>
+<CardContent>
+  <p>Card Content</p>
+</CardContent>
+<CardFooter>
+  <ButtonDemo choice='default' displayedName='CardButton'/>
+  </CardFooter>
+</Card>
+
+  )
+};
+
+export const _withInput: Story = {
+  render:() => (
+      <Card>
+<CardHeader>
+  <CardTitle>Card Title</CardTitle>
+  <CardDescription>Card Description</CardDescription>
+</CardHeader>
+<CardContent>
+<InputDemo type='email' placeholder="Email"/>
+</CardContent>
+<CardFooter>
+  <ButtonDemo choice='default' displayedName='CardButton'/>
+  </CardFooter>
+</Card>
+
+  )
+};
+
+export const _withCheckbox: Story = {
+  render:() => (
+      <Card>
+<CardHeader>
+  <CardTitle>Card Title</CardTitle>
+  <CardDescription>Card Description</CardDescription>
+</CardHeader>
+<CardContent>
+<InputDemo type='email' placeholder="Email"/>
+</CardContent>
+<CardFooter>
+<LabelDemo/>
+  </CardFooter>
+  
+</Card>
+
+  )
 };

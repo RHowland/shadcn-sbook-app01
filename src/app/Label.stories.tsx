@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import  LabelDemo  from "./label/page"
-
+import  LabelDemo  from "./label/page";
 
 
 
