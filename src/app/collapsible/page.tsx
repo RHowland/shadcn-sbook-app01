@@ -11,21 +11,24 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 
-export default function CollapsibleDemo() {
+export default function CollapsibleDemo(props) {
   const [isOpen, setIsOpen] = React.useState(false)
+
+  const variant = props.variant;
+  const width = props.width;
 
   return (
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="w-[350px] space-y-2"
+      className={width}
     >
       <div className="flex items-center justify-between space-x-4 px-4">
         <h4 className="text-sm font-semibold">
           @peduarte starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
-          <Button variant="ghost" size="sm" className="w-9 p-0">
+          <Button variant={variant} size="sm" className="w-9 p-0">
             <ChevronsUpDown className="h-4 w-4" />
             <span className="sr-only">Toggle</span>
           </Button>
