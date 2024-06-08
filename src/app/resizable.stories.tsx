@@ -10,6 +10,13 @@ import {
 const meta: Meta<typeof ResizableDemo> = {
   title: 'App/Page/Resizable',
   component: ResizableDemo,
+  argTypes:{
+    directionPoint1:{
+        options:['vertical','horizontal'],
+        control: {type:'radio'}, 
+    }
+   
+  },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -19,12 +26,30 @@ const meta: Meta<typeof ResizableDemo> = {
 export default meta;
 type Story = StoryObj<typeof ResizableDemo>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+
+    argTypes:{  
+        directionPoint2:{
+        options: ['vertical','horizontal'],
+        control: {type:'radio'}
+      }
+    },
+    args:{
+        directionPoint1:'horizontal',
+        directionPoint2:'vertical',
+
+    }
+};
 
 export const Secondary: Story = {
-    render:() => (
+    args:{
+        directionPoint1:'horizontal',
+        
+
+    },
+    render:({directionPoint1}) => (
         <ResizablePanelGroup
-        direction="vertical"
+        direction={directionPoint1}
         className="min-h-[200px] max-w-m rounded-lg border"
       >
         <ResizablePanel defaultSize={25}>
@@ -43,9 +68,14 @@ export const Secondary: Story = {
 };
 
 export const Tertiary: Story = {
-    render:()=>(
+    args:{
+        directionPoint1:'horizontal',
+        
+
+    },
+    render:({directionPoint1})=>(
         <ResizablePanelGroup
-        direction="horizontal"
+        direction={directionPoint1}
         className="min-h-[200px] max-w-md rounded-lg border"
       >
         <ResizablePanel defaultSize={25}>
