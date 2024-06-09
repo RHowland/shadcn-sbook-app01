@@ -12,10 +12,30 @@ import InputDemo from "./input/page";
 import CheckboxDemo  from "./checkbox/page";
 import  LabelDemo  from "./label/page";
 
-const meta: Meta<typeof Card> = {
+type CardExtension = React.ComponentProps<typeof Card> & { 
+  ExtensionCardTitle?: string , 
+  Description?: string,
+  firstComponent?: Element,
+};
+
+const meta: Meta<CardExtension> = {
     title: 'App/Page/Card',
     component: Card,
     argTypes: {},
+    render:({ExtensionCardTitle,Description,firstComponent})=>(
+      <Card>
+      <CardHeader>
+        <CardTitle>{ExtensionCardTitle}</CardTitle>
+        <CardDescription>{Description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>{firstComponent}</p>
+      </CardContent>
+      <CardFooter>
+        <p>Meta Footer</p>
+      </CardFooter>
+    </Card>
+    ),
   
   parameters: {
       // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -24,7 +44,10 @@ const meta: Meta<typeof Card> = {
   };
   
   export default meta;
-  type Story = StoryObj<typeof Card>;
+  type Story = StoryObj<CardExtension>;
+
+  export const ElUno: Story = {};
+  
 
   export const _Default: Story = {
     render:() => (
