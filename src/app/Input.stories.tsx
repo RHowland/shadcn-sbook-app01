@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import InputDemo from "./input/page";
+import { Label } from  "@/components/ui/label";
+import { Button } from  "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const meta: Meta<typeof InputDemo> = {
   title: 'App/Page/Input',
@@ -40,12 +43,12 @@ export const _Default: Story = {
 };
 
 export const _File: Story = {
-    render:() => (
-        <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="picture">Picture</Label>
-        <Input id="picture" type="file" />
-        </div>
-    )
+    args:{
+        type:'file',
+        height:'h-10',
+        width:'w-full',
+        disabled:false,
+    }
 };
 
 export const _Disabled: Story = {
@@ -58,19 +61,26 @@ export const _Disabled: Story = {
 };
 
 export const _WithLabel: Story = {
-    render:() => (
+    args:{label:'Email'},
+    render:({label,height,width,type}) => (
         <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="Email" />
+        <Label htmlFor="email">{label}</Label>
+        <Input id="email" type={type} placeholder="Email" className={height+' '+width}/>
         </div>
     )
 };
 
 export const _WithButton: Story = {
-    render:() => (
+    argTypes:{
+        variant:{
+        options:['destructive','ghost','outline','secondary','default'],
+        control:{type:'radio'},
+    },
+    },
+    render:({variant,type,height,width}) => (
         <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input type="email" placeholder="Email" />
-        <Button type="submit">Subscribe</Button>
+        <Input type={type} placeholder="Email" className={height+' '+width} />
+        <Button variant={variant}>Subscribe</Button>
         </div>
     )
 };

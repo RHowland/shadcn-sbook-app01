@@ -5,6 +5,7 @@ import * as React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 
+
 export default function CalendarDemo() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())
 
@@ -14,6 +15,7 @@ export default function CalendarDemo() {
       selected={date}
       onSelect={setDate}
       className="rounded-md border"
+      
     />
   )
 }
