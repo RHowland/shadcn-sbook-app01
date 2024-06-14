@@ -30,7 +30,14 @@ import {
   } from "@/components/ui/pagination"
   import { Separator } from "@/components/ui/separator"
   
-  export default function ComponentExample2() {
+  export default function ComponentExample2(props) {
+
+    const iconButtonVariant = props.iconButtonVariant;
+    const orderButtonVariant = props.iconButtonVariant;
+    const dropDownButtonVariant = props.dropDownButtonVariant;
+    const bottomIconButtonVariant1 = props.bottomIconButtonVariant1;
+    const bottomIconButtonVariant2 = props.bottomIconButtonVariant2;
+
     return (
       <Card className="overflow-hidden">
         <CardHeader className="flex flex-row items-start bg-muted/50">
@@ -39,7 +46,7 @@ import {
               Order Oe31b70H
               <Button
                 size="icon"
-                variant="outline"
+                variant={iconButtonVariant}
                 className="h-6 w-6 opacity-0 transition-opacity group-hover:opacity-100"
               >
                 <Copy className="h-3 w-3" />
@@ -49,7 +56,7 @@ import {
             <CardDescription>Date: November 23, 2023</CardDescription>
           </div>
           <div className="ml-auto flex items-center gap-1">
-            <Button size="sm" variant="outline" className="h-8 gap-1">
+            <Button size="sm" variant={orderButtonVariant} className="h-8 gap-1">
               <Truck className="h-3.5 w-3.5" />
               <span className="lg:sr-only xl:not-sr-only xl:whitespace-nowrap">
                 Track Order
@@ -57,7 +64,7 @@ import {
             </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button size="icon" variant="outline" className="h-8 w-8">
+                <Button size="icon" variant={dropDownButtonVariant} className="h-8 w-8">
                   <MoreVertical className="h-3.5 w-3.5" />
                   <span className="sr-only">More</span>
                 </Button>
@@ -168,13 +175,13 @@ import {
           <Pagination className="ml-auto mr-0 w-auto">
             <PaginationContent>
               <PaginationItem>
-                <Button size="icon" variant="outline" className="h-6 w-6">
+                <Button size="icon" variant={bottomIconButtonVariant1} className="h-6 w-6">
                   <ChevronLeft className="h-3.5 w-3.5" />
                   <span className="sr-only">Previous Order</span>
                 </Button>
               </PaginationItem>
               <PaginationItem>
-                <Button size="icon" variant="outline" className="h-6 w-6">
+                <Button size="icon" variant={bottomIconButtonVariant2} className="h-6 w-6">
                   <ChevronRight className="h-3.5 w-3.5" />
                   <span className="sr-only">Next Order</span>
                 </Button>

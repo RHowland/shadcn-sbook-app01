@@ -17,6 +17,8 @@ export default function ComponentExample1(props) {
   const lineHeight = props.lineHeight;
   const width = props.width;
   const border = props.border;
+  const customComp = props.customComp;
+  
 
   return (
     <Card className={`sm:col-span-2 ${border}`}>
@@ -28,7 +30,7 @@ export default function ComponentExample1(props) {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button variant={buttonVariant}>Create New Order</Button>
+        {customComp}
       </CardFooter>
     </Card>
   )

@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ComponentExample1 from "./Example2/page";
 import ComponentExample2 from './Example2/page';
 
 
-const meta: Meta<typeof ComponentExample1> = {
+const meta: Meta<typeof ComponentExample2> = {
   title: 'App/Examples/ComponentExample2',
-  component: ComponentExample1,
+  component: ComponentExample2,
   
 
   
@@ -19,5 +18,14 @@ const meta: Meta<typeof ComponentExample1> = {
 export default meta;
 type Story = StoryObj<typeof ComponentExample2>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args:{
+  iconButtonVariant : 'outline',
+  orderButtonVariant : 'outline',
+  dropDownButtonVariant : 'outline',
+  bottomIconButtonVariant1 : 'outline',
+  bottomIconButtonVariant2 : 'outline',
+  }
+
+};
   

@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ComponentExample1 from "./Example1/page";
+import ButtonDemo from "./button/page";
+import { Switch } from "@/components/ui/switch";
 
 
 const meta: Meta<typeof ComponentExample1> = {
   title: 'App/Examples/ComponentExample1',
   component: ComponentExample1,
-  
 
   
   parameters: {
@@ -26,7 +27,8 @@ export const Primary: Story = {
     text:"text-balance",
     lineHeight:"leading-relaxed",
     width:"max-w-lg",
-    border:"rounded-full",
+    border:"rounded-none",
+    customComp:<Switch/>,
     
   }
 };
