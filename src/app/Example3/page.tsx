@@ -9,19 +9,25 @@ import {
   import { Label } from "@/components/ui/label"
   import { Textarea } from "@/components/ui/textarea"
   
-  export default function ComponentExample3() {
+  export default function ComponentExample3(props) {
+
+   const title = props.title;
+   const description = props.description;
+   const cardName = props.cardName;
+
+
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Product Details</CardTitle>
+          <CardTitle>{title}</CardTitle>
           <CardDescription>
-            Lipsum dolor sit amet, consectetur adipiscing elit
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-6">
             <div className="grid gap-3">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{cardName}</Label>
               <Input
                 id="name"
                 type="text"

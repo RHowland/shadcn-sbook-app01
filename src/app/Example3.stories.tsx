@@ -19,4 +19,10 @@ const meta: Meta<typeof ComponentExample3> = {
 export default meta;
 type Story = StoryObj<typeof ComponentExample3>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args:{
+  title:'Card Title',
+  description:'Card Description',
+  cardName:'Card Name',
+  }
+};
